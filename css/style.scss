@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+body{
+	font-family: 'Open Sans', sans-serif;
+	color: #2D3950;
+	font-size: 16px;
+}
+a{
+	text-decoration: none;
+}
+$primaryColor: #15A4FA; 
+$secondaryColor: #2D3950;
+$bgcolor: #F6F9F9;
+%gradient{
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#48baff+50,48baff+50,5fc3ff+50 */
+background: #48baff; /* Old browsers */
+background: -moz-linear-gradient(left,  #48baff 50%, #48baff 50%, #5fc3ff 50%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #48baff 50%,#48baff 50%,#5fc3ff 50%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #48baff 50%,#48baff 50%,#5fc3ff 50%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#48baff', endColorstr='#5fc3ff',GradientType=1 ); /* IE6-9 */
+} 
+%transition{
+	transition: all .4s linear;
+	-moz-transition: all .4s linear;
+	-webkit-transition: all .4s linear;
+}
+.bg{
+	background-color: $bgcolor;
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  background: $bgcolor;
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 20px 0;
+}
+
+#header.header-scrolled {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 12px 0;
+}
+
+#header.header-inner-pages {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#header .logo img {
+  max-height: 40px;
+}
+
+@media (max-width: 992px) {
+  #header {
+    padding: 12px 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
+.nav-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul {
+  display: flex;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+  padding: 8px 0 8px 15px;
+}
+
+.nav-menu a {
+  display: block;
+  position: relative;
+  color: $secondaryColor;
+  transition: 0.3s;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  padding: 10px 20px; 
+  border-radius: 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+  color: $primaryColor;
+  
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  z-index: 9998;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
+
+.mobile-nav-toggle i {
+  color: #556270;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  z-index: 9999;
+  overflow-y: auto;
+  background: #fff;
+  transition: ease-in-out 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.mobile-nav * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-nav a {
+  display: block;
+  position: relative;
+  color: #556270;
+  padding: 10px 20px;
+  font-weight: 500;
+  outline: none;
+}
+
+.mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
+  color: $primaryColor;
+  text-decoration: none;
+}
+
+
+
+.mobile-nav-overly {
+  width: 100%;
+  height: 100%;
+  z-index: 9997;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgba(63, 73, 83, 0.6);
+  overflow: hidden;
+  display: none;
+  transition: ease-in-out 0.2s;
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+.mobile-nav-active .mobile-nav {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# banner
+--------------------------------------------------------------*/
+.banner-section{
+	background-image: url(../images/Strict.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+.banner-section .click{
+	position: absolute;
+	font-size: 30px;
+	bottom: 20px;
+	color: #fff;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.banner-section .row{
+	align-items: center;
+	height: 80vh;
+	color: #fff;
+	justify-content: center;
+	text-align: center;
+}
+.banner-section h1{
+	font-weight: 600;
+	font-size: 120px;
+	text-transform: uppercase;
+}
+.banner-section span{
+	background-color: $primaryColor;
+	display: block;
+	height: 2px;
+	margin-bottom: 20px;
+
+}
+.banner-section p{
+	color: #fff;
+	font-size: 16px;
+	
+}
+.btn-custom{
+	border: 1px solid $primaryColor;
+	color: #fff;
+	padding: 13px 30px;
+	@extend %transition;
+}
+.btn-custom:hover{
+	color: #fff;
+	background-color: $primaryColor;
+}
+
+@media (max-width: 768px) {
+   .banner-section h1{
+	font-weight: 600;
+	font-size: 90px;
+	
+}
+.btn-custom{
+	
+	padding: 8px 20px;
+	
+}
+}
+
+@media (max-width: 576px) {
+   .banner-section h1{
+	font-weight: 600;
+	font-size: 70px;
+	
+}
+.btn-custom{
+	
+	padding: 6px 15px;
+	
+}
+.banner-section .row{
+	align-items: center;
+	height: 60vh;
+	color: #fff;
+	justify-content: center;
+	text-align: center;
+}
+}
+
+
+/*--------------------------------------------------------------
+# about-us
+--------------------------------------------------------------*/
+.about-us-section{
+	background-color: $bgcolor;
+	padding: 40px 0;
+	text-align: center;
+}
+.about-us-section h3{
+	font-size: 30px;
+	font-weight: 400;
+	padding-bottom: 20px;
+}
+.about-us-section p{
+	color: #A0A0A0;
+}
+
+.service-section{
+	padding: 100px 0;
+}
+.service-section .service{
+	text-align: center;
+}
+.service-section .service h2{
+	padding: 20px 0;
+	font-weight: 400;
+	font-size: 30px;
+}
+.service-section .service p{
+	color: #A0A0A0;
+}
+.service-section .service .icon{
+	@extend %gradient;
+	height: 100px;
+	width: 100px;
+	color: #fff;
+	font-size: 50px;
+	text-align: center;
+	line-height: 100px;
+	margin: auto;
+}
+.service-section .service .icon i{
+	text-shadow: 1px 1px 2px #2D3950;
+}
+
+
+
+/*--------------------------------------------------------------
+# Our Portfolio
+--------------------------------------------------------------*/
+#portfolio{
+	padding: 50px 0;
+}
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  color: $secondaryColor;
+}
+
+.section-title p {
+  margin-bottom: 0;
+  color: #A0A0A0;
+  font-size: 16px;
+}
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
+}
+
+.portfolio #portfolio-flters {
+  padding: 0;
+  margin: 0 0 35px 0;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio #portfolio-flters li {
+  cursor: pointer;
+  margin: 0 15px 15px 0;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #444;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background: #fff;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+  background: #428bca;
+  color: #fff;
+}
+
+.portfolio #portfolio-flters li:last-child {
+  margin-right: 0;
+}
+
+.portfolio .portfolio-wrap {
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-wrap img {
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.3s;
+  text-align: center;
+  background: rgba(88, 204, 237, 0.8);
+  padding-bottom: 30px;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h4 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.portfolio .portfolio-wrap .portfolio-info p {
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.portfolio .portfolio-wrap .portfolio-info a {
+  color: $primaryColor;
+  margin: 0 4px;
+  font-size: 18px;
+  line-height: 1;
+  background-color: #fff;
+  padding-top: 7px;
+  border-radius: 50px;
+  text-align: center;
+  width: 36px;
+  height: 35px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-info a:hover {
+  background: $primaryColor;
+  color: #fff;
+}
+
+.portfolio .portfolio-wrap:hover {
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+  opacity: 1;
+  padding-bottom: 0;
+}
+
+.portfolio .portfolio-wrap:hover img {
+  transform: scale(1.1);
+}
+
+
+
+/*form section start*/
+.form-section {
+  padding: 50px 0;
+  background-image: url(../images/contact.jpg);
+   }
+  .form-section h2 {
+    color: white;
+    font-size: 42px;
+    margin-bottom: 10px;
+    text-align: center; 
+}
+  .form-section p {
+    color: #d0cdcd;
+    text-align: center;
+    font-size: 15px;
+    padding-bottom: 25px;
+     }
+  .form-section .form-content {
+    overflow: hidden;
+    width: 100%; 
+}
+    .form-section .form-content input, .form-section .form-content textarea {
+      font-size: 16px;
+      margin-bottom: 20px;
+      padding: 30px 20px;
+      background: none;
+      border: 1px solid #8e8e8e; 
+  }
+    .form-section .form-content .last-input {
+      color: red; 
+  }
+
+.custom-control{
+	padding: 20px 0 0 25px;
+}
+.custom-control-label {
+	position: relative;
+	margin-bottom: 0;
+	vertical-align: top;
+	color: #fff;
+}
+/*form section end*/
+
+footer{
+	background-color: $bgcolor;
+	padding: 30px 0;
+}
+footer p{
+	margin-bottom: 0;
+
+}
+footer ul{}
+footer ul li{}
+footer ul li a{
+	margin-left: 10px;
+	background-color: $primaryColor;
+	color: #fff;
+	height: 35px;
+	width: 35px;
+	display: block;
+	line-height: 35px;
+	text-align: center;
+	border: 1px solid $primaryColor;
+	@extend %transition;
+}
+footer ul li a:hover{
+	background-color: transparent;
+	color: $primaryColor;
+	border: 1px solid $primaryColor;
+}
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  display: none;
+  right: 15px;
+  bottom: 15px;
+  z-index: 99999;
+}
+
+.back-to-top i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background: #15A4FA;
+  color: #fff;
+  transition: all 0.4s;
+
+}
+
+.back-to-top i:hover {
+  background: #15A4FAB3;
+  color: #fff;
+  text-decoration: none;
+}
